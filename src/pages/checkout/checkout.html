@@ -1,0 +1,18 @@
+<ion-header>
+    <ion-navbar >
+        <ion-title>
+            CheckOut
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-card *ngIf="params.data">
+        <ion-card-header>
+            Su pizza es de:
+        </ion-card-header>
+        <ion-card-content>
+            {{ params.data.text | json}}
+        </ion-card-content>
+    </ion-card>
+</ion-content>

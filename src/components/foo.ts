@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NavController } from 'ionic-angular';
+import { CheckOut } from '../pages/checkout/checkout';
 
 @Component ({
     selector: 'my-component',
@@ -7,12 +9,16 @@ import { Component } from '@angular/core';
 
 export class MyComponent {
     public data: any = {myToggle:true};
-
-    constructor(){
+    public checkout:any = CheckOut;
+    constructor(public navCtrl: NavController){
 
     }
 
     isClicked(val){
         console.log('Vegetariana: ' + val);
     }
+
+    gotoCheckOutPage(type:string){
+        this.navCtrl.push(CheckOut, {text:type});
+  }
 }
